@@ -38,6 +38,9 @@ class ClassmateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             fatalError("Downcast to Set of courses failed")
         }
         coursesOfStudent = Array(courseSet)
+        
+        //load classmate of the first course in the list
+        loadClassmates(courseId: coursesOfStudent[0].id!)
 
     }
 

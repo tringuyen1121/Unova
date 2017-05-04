@@ -22,7 +22,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signInIndicatorView: UIActivityIndicatorView!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
+
     //Reference to database of Firebase
     let databaseRef = FIRDatabase.database().reference()
     
@@ -98,39 +98,31 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                     let avatar = result["avatar"] as! NSData
                     let email = result["email"] as! String
                     let id = result["id"] as! String
-                    
-                    //Load courses of user
                     let course = result["courses"] as! [String: String]
                     
+                    //Load courses of user
                     for courseId in Array(course.keys) {
-                        Util.getCourse(courseId: courseId, completionHandler: { courseData in
+                        Util.getCourse(courseId: courseId, into: managedContext, completionHandler: { course in
                             
-                            //Initialize User
-                            let name = courseData["name"] as! String
-                            let lecturer = courseData["lecturer"] as! String
-                            let id = courseId
+                            //Load lectures
+                            Util.getLectures(of: course.id!, into: managedContext, completionHandler: {array in
+                                let lectureSet = NSSet(array: array)
+                                course.addToLecture(lectureSet)
+                                
+                                self.save(in: managedContext)
+                            })
                             
-                            guard let course = Course.init(name: name, id: courseId, lecturer: lecturer, insertInto: managedContext) else {
-                                fatalError("Cannot init course")
-                            }
+                            //Adding course to student
+                            self.appDelegate.user?.addToCourse(course)
                             
                             //Save courses
-                            do {
-                                //Adding course to student
-                                self.appDelegate.user?.addToCourse(course)
-                                
-                                try managedContext.save()
-                            } catch let error as NSError {
-                                print("Error of saving course: \(error)")
-                            }
+                            self.save(in: managedContext)
                         })
                     }
                     
                     self.appDelegate.user = Student.init(email: email, firstName: firstName, lastName: lastName, id: id, avatar: avatar, insertInto: managedContext)
                     
-                    self.saveUser(in: managedContext)
-                    
-                    print("Saving done")
+                    self.save(in: managedContext)
                     
                     //Navigate to next scene
                     self.signInIndicatorView.startAnimating()
@@ -149,9 +141,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     
-    private func saveUser(in context: NSManagedObjectContext) {
+    private func save(in context: NSManagedObjectContext) {
         do {
-            print("Saving User")
             try context.save()
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")

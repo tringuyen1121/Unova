@@ -12,7 +12,7 @@ import CoreData
 @objc(Lecture)
 public class Lecture: NSManagedObject {
     
-    convenience init?(room: String, endTime: Double, startTime: Double, date: NSDate, id: String, course: Course?, insertInto context: NSManagedObjectContext) {
+    convenience init?(room: String, endTime: Double, startTime: Double, date: NSDate, id: String, checkinTime: NSDictionary?, insertInto context: NSManagedObjectContext) {
         
         //Initialization should fail if trying to initialize invalid course
         if room.isEmpty || id.isEmpty || room.isEmpty || startTime > 24.0 || startTime < 0.0 || endTime > 24.0 || endTime < 0.0 {
@@ -29,6 +29,7 @@ public class Lecture: NSManagedObject {
         self.endTime = endTime
         self.room = room
         self.date = date
+        self.checkinTime = checkinTime
     }
 
 

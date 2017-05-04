@@ -75,7 +75,7 @@ class UnovaTests: XCTestCase {
         
         let date = Util.convertFromStringToDate(from: "2017-04-03", to: "yyyy-MM-dd")
         
-        let validLecture = Lecture.init(room: "ABY000", endTime: 24.0, startTime: 0.0, date: date!, id: "l001", course: nil, insertInto: context)
+        let validLecture = Lecture.init(room: "ABY000", endTime: 24.0, startTime: 0.0, date: date!, id: "l001", checkinTime: nil, insertInto: context)
         XCTAssertNotNil(validLecture)
         
     }
@@ -88,18 +88,18 @@ class UnovaTests: XCTestCase {
         let date = Util.convertFromStringToDate(from: "2017-04-03", to: "yyyy-MM-dd")
 
         //Empty Id
-        let invalidIdLecture = Lecture.init(room: "ABY000", endTime: 24.0, startTime: 0.0, date: date!, id: "", course: nil, insertInto: context)
+        let invalidIdLecture = Lecture.init(room: "ABY000", endTime: 24.0, startTime: 0.0, date: date!, id: "", checkinTime: nil, insertInto: context)
         XCTAssertNil(invalidIdLecture)
         
         //Invalid Time
-        let invalidEndTimeLecture = Lecture.init(room: "ABY000", endTime: 24.1, startTime: 0.0, date: date!, id: "l001", course: nil, insertInto: context)
+        let invalidEndTimeLecture = Lecture.init(room: "ABY000", endTime: 24.1, startTime: 0.0, date: date!, id: "l001", checkinTime: nil, insertInto: context)
         XCTAssertNil(invalidEndTimeLecture)
         
-        let invalidStartTimeLecture = Lecture.init(room: "ABY000", endTime: 24.0, startTime: -0.1, date: date!, id: "l001", course: nil, insertInto: context)
+        let invalidStartTimeLecture = Lecture.init(room: "ABY000", endTime: 24.0, startTime: -0.1, date: date!, id: "l001", checkinTime: nil, insertInto: context)
         XCTAssertNil(invalidStartTimeLecture)
         
         //Empty room
-        let invalidRoomLecture = Lecture.init(room: "", endTime: 24.0, startTime: 0.0, date: date!, id: "l001", course: nil, insertInto: context)
+        let invalidRoomLecture = Lecture.init(room: "", endTime: 24.0, startTime: 0.0, date: date!, id: "l001", checkinTime: nil, insertInto: context)
         XCTAssertNil(invalidRoomLecture)
     }
 

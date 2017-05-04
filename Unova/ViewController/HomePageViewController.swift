@@ -56,5 +56,7 @@ class HomePageViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //Mark: Private func
 
 }
