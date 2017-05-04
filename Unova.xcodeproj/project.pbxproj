@@ -1,0 +1,668 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10444FFBC9DA08ACC22341A9 /* Pods_Unova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFAE3B1DDB88C6C6A060E8DA /* Pods_Unova.framework */; };
+		6AA4B1DF1EBA397F00C907FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B1DE1EBA397F00C907FF /* AppDelegate.swift */; };
+		6AA4B1E11EBA397F00C907FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B1E01EBA397F00C907FF /* ViewController.swift */; };
+		6AA4B1E71EBA397F00C907FF /* Unova.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B1E51EBA397F00C907FF /* Unova.xcdatamodeld */; };
+		6AA4B1EC1EBA398000C907FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA4B1EA1EBA398000C907FF /* LaunchScreen.storyboard */; };
+		6AA4B1F71EBA398000C907FF /* UnovaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B1F61EBA398000C907FF /* UnovaTests.swift */; };
+		6AA4B20E1EBA3C3E00C907FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6AA4B20D1EBA3C3E00C907FF /* GoogleService-Info.plist */; };
+		6AA4B2101EBA3E9100C907FF /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B20F1EBA3E9100C907FF /* Util.swift */; };
+		6AA4B2121EBA57E700C907FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AA4B2111EBA57E700C907FF /* Assets.xcassets */; };
+		6AA4B2151EBA586000C907FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA4B2131EBA586000C907FF /* Main.storyboard */; };
+		6AA4B2171EBA5C4600C907FF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B2161EBA5C4600C907FF /* SignInViewController.swift */; };
+		6AA4B21E1EBA61F200C907FF /* Lecture+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B2181EBA61F200C907FF /* Lecture+CoreDataClass.swift */; };
+		6AA4B21F1EBA61F200C907FF /* Lecture+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B2181EBA61F200C907FF /* Lecture+CoreDataClass.swift */; };
+		6AA4B2201EBA61F200C907FF /* Lecture+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B2191EBA61F200C907FF /* Lecture+CoreDataProperties.swift */; };
+		6AA4B2211EBA61F200C907FF /* Lecture+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B2191EBA61F200C907FF /* Lecture+CoreDataProperties.swift */; };
+		6AA4B2261EBA61F200C907FF /* Course+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B21C1EBA61F200C907FF /* Course+CoreDataClass.swift */; };
+		6AA4B2271EBA61F200C907FF /* Course+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B21C1EBA61F200C907FF /* Course+CoreDataClass.swift */; };
+		6AA4B2281EBA61F200C907FF /* Course+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B21D1EBA61F200C907FF /* Course+CoreDataProperties.swift */; };
+		6AA4B2291EBA61F200C907FF /* Course+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B21D1EBA61F200C907FF /* Course+CoreDataProperties.swift */; };
+		6AA4B22D1EBA709C00C907FF /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B22B1EBA709C00C907FF /* Student+CoreDataClass.swift */; };
+		6AA4B22E1EBA709C00C907FF /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B22C1EBA709C00C907FF /* Student+CoreDataProperties.swift */; };
+		6AA4B2301EBA753400C907FF /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B22F1EBA753400C907FF /* HomePageViewController.swift */; };
+		6AA4B2321EBA785E00C907FF /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B2311EBA785E00C907FF /* SettingViewController.swift */; };
+		6AA4B2371EBA93FD00C907FF /* ClassmateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B2361EBA93FD00C907FF /* ClassmateViewController.swift */; };
+		6AA4B2391EBA941D00C907FF /* ClassmateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B2381EBA941D00C907FF /* ClassmateTableViewCell.swift */; };
+		7F6FC39E382E4979D2732C0F /* Pods_UnovaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC32897F03FC0300A125E117 /* Pods_UnovaTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6AA4B1F31EBA398000C907FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AA4B1D31EBA397F00C907FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AA4B1DA1EBA397F00C907FF;
+			remoteInfo = Unova;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		10D6D9A949173AD5D9B47DFB /* Pods-Unova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unova.release.xcconfig"; path = "Pods/Target Support Files/Pods-Unova/Pods-Unova.release.xcconfig"; sourceTree = "<group>"; };
+		29731464F4B6480D2EB03288 /* Pods-UnovaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnovaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnovaTests/Pods-UnovaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6AA4B1DB1EBA397F00C907FF /* Unova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unova.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AA4B1DE1EBA397F00C907FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6AA4B1E01EBA397F00C907FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6AA4B1E61EBA397F00C907FF /* Unova.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Unova.xcdatamodel; sourceTree = "<group>"; };
+		6AA4B1EB1EBA398000C907FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6AA4B1ED1EBA398000C907FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AA4B1F21EBA398000C907FF /* UnovaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnovaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AA4B1F61EBA398000C907FF /* UnovaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnovaTests.swift; sourceTree = "<group>"; };
+		6AA4B1F81EBA398000C907FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AA4B20D1EBA3C3E00C907FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6AA4B20F1EBA3E9100C907FF /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		6AA4B2111EBA57E700C907FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets.xcassets; sourceTree = "<group>"; };
+		6AA4B2141EBA586000C907FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6AA4B2161EBA5C4600C907FF /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		6AA4B2181EBA61F200C907FF /* Lecture+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Lecture+CoreDataClass.swift"; path = "Lecture+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6AA4B2191EBA61F200C907FF /* Lecture+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Lecture+CoreDataProperties.swift"; path = "Lecture+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6AA4B21C1EBA61F200C907FF /* Course+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Course+CoreDataClass.swift"; path = "Course+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6AA4B21D1EBA61F200C907FF /* Course+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Course+CoreDataProperties.swift"; path = "Course+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6AA4B22B1EBA709C00C907FF /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Student+CoreDataClass.swift"; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6AA4B22C1EBA709C00C907FF /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Student+CoreDataProperties.swift"; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6AA4B22F1EBA753400C907FF /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePageViewController.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		6AA4B2311EBA785E00C907FF /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		6AA4B2361EBA93FD00C907FF /* ClassmateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassmateViewController.swift; sourceTree = "<group>"; };
+		6AA4B2381EBA941D00C907FF /* ClassmateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassmateTableViewCell.swift; sourceTree = "<group>"; };
+		7774308BDA5D3B6E3AC09279 /* Pods-UnovaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnovaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnovaTests/Pods-UnovaTests.release.xcconfig"; sourceTree = "<group>"; };
+		AC32897F03FC0300A125E117 /* Pods_UnovaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnovaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFAE3B1DDB88C6C6A060E8DA /* Pods_Unova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EABD4AD9292C6F2E47927819 /* Pods-Unova.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unova.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Unova/Pods-Unova.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6AA4B1D81EBA397F00C907FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10444FFBC9DA08ACC22341A9 /* Pods_Unova.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AA4B1EF1EBA398000C907FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F6FC39E382E4979D2732C0F /* Pods_UnovaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6AA4B1D21EBA397F00C907FF = {
+			isa = PBXGroup;
+			children = (
+				9834D53189551D9EA7BDBDC4 /* Frameworks */,
+				DA8C49D31935B3538A9581DA /* Pods */,
+				6AA4B1DC1EBA397F00C907FF /* Products */,
+				6AA4B1DD1EBA397F00C907FF /* Unova */,
+				6AA4B1F51EBA398000C907FF /* UnovaTests */,
+			);
+			sourceTree = "<group>";
+		};
+		6AA4B1DC1EBA397F00C907FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6AA4B1DB1EBA397F00C907FF /* Unova.app */,
+				6AA4B1F21EBA398000C907FF /* UnovaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6AA4B1DD1EBA397F00C907FF /* Unova */ = {
+			isa = PBXGroup;
+			children = (
+				6AA4B2331EBA7FB100C907FF /* Core Data */,
+				6AA4B2351EBA7FF100C907FF /* Utility */,
+				6AA4B2341EBA7FC900C907FF /* ViewController */,
+				6AA4B1DE1EBA397F00C907FF /* AppDelegate.swift */,
+				6AA4B2111EBA57E700C907FF /* Assets.xcassets */,
+				6AA4B20D1EBA3C3E00C907FF /* GoogleService-Info.plist */,
+				6AA4B1ED1EBA398000C907FF /* Info.plist */,
+				6AA4B1EA1EBA398000C907FF /* LaunchScreen.storyboard */,
+				6AA4B2131EBA586000C907FF /* Main.storyboard */,
+				6AA4B1E51EBA397F00C907FF /* Unova.xcdatamodeld */,
+			);
+			path = Unova;
+			sourceTree = "<group>";
+		};
+		6AA4B1F51EBA398000C907FF /* UnovaTests */ = {
+			isa = PBXGroup;
+			children = (
+				6AA4B1F81EBA398000C907FF /* Info.plist */,
+				6AA4B1F61EBA398000C907FF /* UnovaTests.swift */,
+			);
+			path = UnovaTests;
+			sourceTree = "<group>";
+		};
+		6AA4B2331EBA7FB100C907FF /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				6AA4B21C1EBA61F200C907FF /* Course+CoreDataClass.swift */,
+				6AA4B21D1EBA61F200C907FF /* Course+CoreDataProperties.swift */,
+				6AA4B2181EBA61F200C907FF /* Lecture+CoreDataClass.swift */,
+				6AA4B2191EBA61F200C907FF /* Lecture+CoreDataProperties.swift */,
+				6AA4B22B1EBA709C00C907FF /* Student+CoreDataClass.swift */,
+				6AA4B22C1EBA709C00C907FF /* Student+CoreDataProperties.swift */,
+			);
+			name = "Core Data";
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		6AA4B2341EBA7FC900C907FF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6AA4B2381EBA941D00C907FF /* ClassmateTableViewCell.swift */,
+				6AA4B2361EBA93FD00C907FF /* ClassmateViewController.swift */,
+				6AA4B22F1EBA753400C907FF /* HomePageViewController.swift */,
+				6AA4B2311EBA785E00C907FF /* SettingViewController.swift */,
+				6AA4B2161EBA5C4600C907FF /* SignInViewController.swift */,
+				6AA4B1E01EBA397F00C907FF /* ViewController.swift */,
+			);
+			name = ViewController;
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6AA4B2351EBA7FF100C907FF /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				6AA4B20F1EBA3E9100C907FF /* Util.swift */,
+			);
+			name = Utility;
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		9834D53189551D9EA7BDBDC4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFAE3B1DDB88C6C6A060E8DA /* Pods_Unova.framework */,
+				AC32897F03FC0300A125E117 /* Pods_UnovaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA8C49D31935B3538A9581DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EABD4AD9292C6F2E47927819 /* Pods-Unova.debug.xcconfig */,
+				10D6D9A949173AD5D9B47DFB /* Pods-Unova.release.xcconfig */,
+				29731464F4B6480D2EB03288 /* Pods-UnovaTests.debug.xcconfig */,
+				7774308BDA5D3B6E3AC09279 /* Pods-UnovaTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6AA4B1DA1EBA397F00C907FF /* Unova */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AA4B1FB1EBA398000C907FF /* Build configuration list for PBXNativeTarget "Unova" */;
+			buildPhases = (
+				B12490A6F6089FC3C81221DB /* [CP] Check Pods Manifest.lock */,
+				6AA4B1D71EBA397F00C907FF /* Sources */,
+				6AA4B1D81EBA397F00C907FF /* Frameworks */,
+				6AA4B1D91EBA397F00C907FF /* Resources */,
+				26C9572CD4A4B75A1274FF17 /* [CP] Embed Pods Frameworks */,
+				B4E0AC71EE7B11EEC2BB01AE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Unova;
+			productName = Unova;
+			productReference = 6AA4B1DB1EBA397F00C907FF /* Unova.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6AA4B1F11EBA398000C907FF /* UnovaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AA4B1FE1EBA398000C907FF /* Build configuration list for PBXNativeTarget "UnovaTests" */;
+			buildPhases = (
+				FC306546F6488E994A1C6C20 /* [CP] Check Pods Manifest.lock */,
+				6AA4B1EE1EBA398000C907FF /* Sources */,
+				6AA4B1EF1EBA398000C907FF /* Frameworks */,
+				6AA4B1F01EBA398000C907FF /* Resources */,
+				45FE559AD2E0699D4FF5339B /* [CP] Embed Pods Frameworks */,
+				52070F454A6B2D8A9325550B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6AA4B1F41EBA398000C907FF /* PBXTargetDependency */,
+			);
+			name = UnovaTests;
+			productName = UnovaTests;
+			productReference = 6AA4B1F21EBA398000C907FF /* UnovaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6AA4B1D31EBA397F00C907FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Unova;
+				TargetAttributes = {
+					6AA4B1DA1EBA397F00C907FF = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = FMMED42TM5;
+						ProvisioningStyle = Automatic;
+					};
+					6AA4B1F11EBA398000C907FF = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = FMMED42TM5;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6AA4B1DA1EBA397F00C907FF;
+					};
+				};
+			};
+			buildConfigurationList = 6AA4B1D61EBA397F00C907FF /* Build configuration list for PBXProject "Unova" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6AA4B1D21EBA397F00C907FF;
+			productRefGroup = 6AA4B1DC1EBA397F00C907FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6AA4B1DA1EBA397F00C907FF /* Unova */,
+				6AA4B1F11EBA398000C907FF /* UnovaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6AA4B1D91EBA397F00C907FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AA4B1EC1EBA398000C907FF /* LaunchScreen.storyboard in Resources */,
+				6AA4B20E1EBA3C3E00C907FF /* GoogleService-Info.plist in Resources */,
+				6AA4B2121EBA57E700C907FF /* Assets.xcassets in Resources */,
+				6AA4B2151EBA586000C907FF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AA4B1F01EBA398000C907FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26C9572CD4A4B75A1274FF17 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Unova/Pods-Unova-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45FE559AD2E0699D4FF5339B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UnovaTests/Pods-UnovaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52070F454A6B2D8A9325550B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UnovaTests/Pods-UnovaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B12490A6F6089FC3C81221DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B4E0AC71EE7B11EEC2BB01AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Unova/Pods-Unova-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC306546F6488E994A1C6C20 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6AA4B1D71EBA397F00C907FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AA4B2261EBA61F200C907FF /* Course+CoreDataClass.swift in Sources */,
+				6AA4B2201EBA61F200C907FF /* Lecture+CoreDataProperties.swift in Sources */,
+				6AA4B2371EBA93FD00C907FF /* ClassmateViewController.swift in Sources */,
+				6AA4B21E1EBA61F200C907FF /* Lecture+CoreDataClass.swift in Sources */,
+				6AA4B2321EBA785E00C907FF /* SettingViewController.swift in Sources */,
+				6AA4B2171EBA5C4600C907FF /* SignInViewController.swift in Sources */,
+				6AA4B1E11EBA397F00C907FF /* ViewController.swift in Sources */,
+				6AA4B1DF1EBA397F00C907FF /* AppDelegate.swift in Sources */,
+				6AA4B2281EBA61F200C907FF /* Course+CoreDataProperties.swift in Sources */,
+				6AA4B1E71EBA397F00C907FF /* Unova.xcdatamodeld in Sources */,
+				6AA4B2391EBA941D00C907FF /* ClassmateTableViewCell.swift in Sources */,
+				6AA4B2301EBA753400C907FF /* HomePageViewController.swift in Sources */,
+				6AA4B22E1EBA709C00C907FF /* Student+CoreDataProperties.swift in Sources */,
+				6AA4B2101EBA3E9100C907FF /* Util.swift in Sources */,
+				6AA4B22D1EBA709C00C907FF /* Student+CoreDataClass.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AA4B1EE1EBA398000C907FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AA4B2291EBA61F200C907FF /* Course+CoreDataProperties.swift in Sources */,
+				6AA4B2271EBA61F200C907FF /* Course+CoreDataClass.swift in Sources */,
+				6AA4B21F1EBA61F200C907FF /* Lecture+CoreDataClass.swift in Sources */,
+				6AA4B2211EBA61F200C907FF /* Lecture+CoreDataProperties.swift in Sources */,
+				6AA4B1F71EBA398000C907FF /* UnovaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6AA4B1F41EBA398000C907FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6AA4B1DA1EBA397F00C907FF /* Unova */;
+			targetProxy = 6AA4B1F31EBA398000C907FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6AA4B1EA1EBA398000C907FF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AA4B1EB1EBA398000C907FF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = .;
+			sourceTree = "<group>";
+		};
+		6AA4B2131EBA586000C907FF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AA4B2141EBA586000C907FF /* Base */,
+			);
+			name = Main.storyboard;
+			path = .;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6AA4B1F91EBA398000C907FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6AA4B1FA1EBA398000C907FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6AA4B1FC1EBA398000C907FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EABD4AD9292C6F2E47927819 /* Pods-Unova.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FMMED42TM5;
+				INFOPLIST_FILE = Unova/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Unova;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6AA4B1FD1EBA398000C907FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10D6D9A949173AD5D9B47DFB /* Pods-Unova.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FMMED42TM5;
+				INFOPLIST_FILE = Unova/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Unova;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		6AA4B1FF1EBA398000C907FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29731464F4B6480D2EB03288 /* Pods-UnovaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FMMED42TM5;
+				INFOPLIST_FILE = UnovaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.UnovaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unova.app/Unova";
+			};
+			name = Debug;
+		};
+		6AA4B2001EBA398000C907FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7774308BDA5D3B6E3AC09279 /* Pods-UnovaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FMMED42TM5;
+				INFOPLIST_FILE = UnovaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.UnovaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unova.app/Unova";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6AA4B1D61EBA397F00C907FF /* Build configuration list for PBXProject "Unova" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AA4B1F91EBA398000C907FF /* Debug */,
+				6AA4B1FA1EBA398000C907FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AA4B1FB1EBA398000C907FF /* Build configuration list for PBXNativeTarget "Unova" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AA4B1FC1EBA398000C907FF /* Debug */,
+				6AA4B1FD1EBA398000C907FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AA4B1FE1EBA398000C907FF /* Build configuration list for PBXNativeTarget "UnovaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AA4B1FF1EBA398000C907FF /* Debug */,
+				6AA4B2001EBA398000C907FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6AA4B1E51EBA397F00C907FF /* Unova.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6AA4B1E61EBA397F00C907FF /* Unova.xcdatamodel */,
+			);
+			currentVersion = 6AA4B1E61EBA397F00C907FF /* Unova.xcdatamodel */;
+			path = Unova.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6AA4B1D31EBA397F00C907FF /* Project object */;
+}
