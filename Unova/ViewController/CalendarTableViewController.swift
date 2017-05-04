@@ -20,6 +20,8 @@ class CalendarTableViewController: UITableViewController {
     //MARK: View Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Calendar"
     }
     
     override func viewWillAppear(_ animated: Bool) {

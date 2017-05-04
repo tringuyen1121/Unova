@@ -145,6 +145,15 @@ class Util{
             completionHandler(lectureList)
         })
     }
+    
+    //Save in context
+    static func save(in context: NSManagedObjectContext) {
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
 
 }
 

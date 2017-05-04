@@ -109,20 +109,20 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                                 let lectureSet = NSSet(array: array)
                                 course.addToLecture(lectureSet)
                                 
-                                self.save(in: managedContext)
+                                Util.save(in: managedContext)
                             })
                             
                             //Adding course to student
                             self.appDelegate.user?.addToCourse(course)
                             
                             //Save courses
-                            self.save(in: managedContext)
+                            Util.save(in: managedContext)
                         })
                     }
                     
                     self.appDelegate.user = Student.init(email: email, firstName: firstName, lastName: lastName, id: id, avatar: avatar, insertInto: managedContext)
                     
-                    self.save(in: managedContext)
+                    Util.save(in: managedContext)
                     
                     //Navigate to next scene
                     self.signInIndicatorView.startAnimating()
@@ -139,14 +139,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    private func save(in context: NSManagedObjectContext) {
-        do {
-            try context.save()
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
     }
     
     private func navigateToHomePage() {

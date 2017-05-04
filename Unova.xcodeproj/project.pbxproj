@@ -12,6 +12,8 @@
 		6A00C8851EBB35870059DA01 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A00C8841EBB35870059DA01 /* CalendarTableViewCell.swift */; };
 		6A00C8871EBB35A20059DA01 /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A00C8861EBB35A20059DA01 /* CalendarTableViewController.swift */; };
 		6A00C8891EBB3E2B0059DA01 /* DictionayTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A00C8881EBB3E2B0059DA01 /* DictionayTransformer.swift */; };
+		6A00C88B1EBB5D4C0059DA01 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A00C88A1EBB5D4C0059DA01 /* ProgressViewController.swift */; };
+		6A00C88D1EBBA2EA0059DA01 /* ProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A00C88C1EBBA2EA0059DA01 /* ProgressCollectionViewCell.swift */; };
 		6AA4B1DF1EBA397F00C907FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B1DE1EBA397F00C907FF /* AppDelegate.swift */; };
 		6AA4B1E11EBA397F00C907FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B1E01EBA397F00C907FF /* ViewController.swift */; };
 		6AA4B1E71EBA397F00C907FF /* Unova.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B1E51EBA397F00C907FF /* Unova.xcdatamodeld */; };
@@ -55,6 +57,8 @@
 		6A00C8841EBB35870059DA01 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		6A00C8861EBB35A20059DA01 /* CalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
 		6A00C8881EBB3E2B0059DA01 /* DictionayTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionayTransformer.swift; sourceTree = "<group>"; };
+		6A00C88A1EBB5D4C0059DA01 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		6A00C88C1EBBA2EA0059DA01 /* ProgressCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCollectionViewCell.swift; sourceTree = "<group>"; };
 		6AA4B1DB1EBA397F00C907FF /* Unova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unova.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AA4B1DE1EBA397F00C907FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AA4B1E01EBA397F00C907FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -169,12 +173,14 @@
 			children = (
 				6A00C8841EBB35870059DA01 /* CalendarTableViewCell.swift */,
 				6A00C8861EBB35A20059DA01 /* CalendarTableViewController.swift */,
+				6A00C88A1EBB5D4C0059DA01 /* ProgressViewController.swift */,
 				6AA4B2381EBA941D00C907FF /* ClassmateTableViewCell.swift */,
 				6AA4B2361EBA93FD00C907FF /* ClassmateViewController.swift */,
 				6AA4B22F1EBA753400C907FF /* HomePageViewController.swift */,
 				6AA4B2311EBA785E00C907FF /* SettingViewController.swift */,
 				6AA4B2161EBA5C4600C907FF /* SignInViewController.swift */,
 				6AA4B1E01EBA397F00C907FF /* ViewController.swift */,
+				6A00C88C1EBBA2EA0059DA01 /* ProgressCollectionViewCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -418,11 +424,13 @@
 				6AA4B2201EBA61F200C907FF /* Lecture+CoreDataProperties.swift in Sources */,
 				6AA4B2371EBA93FD00C907FF /* ClassmateViewController.swift in Sources */,
 				6A00C8851EBB35870059DA01 /* CalendarTableViewCell.swift in Sources */,
+				6A00C88D1EBBA2EA0059DA01 /* ProgressCollectionViewCell.swift in Sources */,
 				6AA4B21E1EBA61F200C907FF /* Lecture+CoreDataClass.swift in Sources */,
 				6AA4B2321EBA785E00C907FF /* SettingViewController.swift in Sources */,
 				6AA4B2171EBA5C4600C907FF /* SignInViewController.swift in Sources */,
 				6AA4B1E11EBA397F00C907FF /* ViewController.swift in Sources */,
 				6AA4B1DF1EBA397F00C907FF /* AppDelegate.swift in Sources */,
+				6A00C88B1EBB5D4C0059DA01 /* ProgressViewController.swift in Sources */,
 				6AA4B2281EBA61F200C907FF /* Course+CoreDataProperties.swift in Sources */,
 				6AA4B1E71EBA397F00C907FF /* Unova.xcdatamodeld in Sources */,
 				6AA4B2391EBA941D00C907FF /* ClassmateTableViewCell.swift in Sources */,

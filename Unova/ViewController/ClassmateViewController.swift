@@ -26,7 +26,8 @@ class ClassmateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.title = "Classmate"
         coursePickerView.dataSource = self
         coursePickerView.delegate = self
         
