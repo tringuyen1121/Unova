@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         if let user = studentResult.first {
             
             appDelegate.user = user
+            appDelegate.userId = user.id
             
             //Navigate to HomePage
             self.navigateToHomePage()

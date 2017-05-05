@@ -14,6 +14,8 @@
 		6A00C8891EBB3E2B0059DA01 /* DictionayTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A00C8881EBB3E2B0059DA01 /* DictionayTransformer.swift */; };
 		6A00C88B1EBB5D4C0059DA01 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A00C88A1EBB5D4C0059DA01 /* ProgressViewController.swift */; };
 		6A00C88D1EBBA2EA0059DA01 /* ProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A00C88C1EBBA2EA0059DA01 /* ProgressCollectionViewCell.swift */; };
+		6A00C8901EBCA74C0059DA01 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B22B1EBA709C00C907FF /* Student+CoreDataClass.swift */; };
+		6A00C8911EBCA74F0059DA01 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B22C1EBA709C00C907FF /* Student+CoreDataProperties.swift */; };
 		6AA4B1DF1EBA397F00C907FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B1DE1EBA397F00C907FF /* AppDelegate.swift */; };
 		6AA4B1E11EBA397F00C907FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B1E01EBA397F00C907FF /* ViewController.swift */; };
 		6AA4B1E71EBA397F00C907FF /* Unova.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4B1E51EBA397F00C907FF /* Unova.xcdatamodeld */; };
@@ -446,10 +448,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AA4B2291EBA61F200C907FF /* Course+CoreDataProperties.swift in Sources */,
+				6A00C8901EBCA74C0059DA01 /* Student+CoreDataClass.swift in Sources */,
 				6AA4B2271EBA61F200C907FF /* Course+CoreDataClass.swift in Sources */,
 				6AA4B21F1EBA61F200C907FF /* Lecture+CoreDataClass.swift in Sources */,
 				6AA4B2211EBA61F200C907FF /* Lecture+CoreDataProperties.swift in Sources */,
 				6AA4B1F71EBA398000C907FF /* UnovaTests.swift in Sources */,
+				6A00C8911EBCA74F0059DA01 /* Student+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

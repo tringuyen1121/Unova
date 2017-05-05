@@ -27,6 +27,15 @@ class Util{
         return date as NSDate
     }
     
+    //Transform from date to String in format
+    static func convertDateString(date: Date, toFormat desFormat : String!) -> String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = desFormat
+        
+        return dateFormatter.string(from: date)
+    }
+    
     //Transform time from Double
     static func transformTime(from time: Double) -> String {
         
@@ -38,9 +47,29 @@ class Util{
             minuteString = "0" + minuteString
         }
         
-        let timeString = String(Int(floor(time))) + "h" + minuteString
+        let timeString = String(Int(floor(time))) + ":" + minuteString
         
         return timeString
+    }
+    
+    //Transform time String to Double
+    static func transformTimeString(from timeString: String) -> Double {
+        
+        let numberOfDecimalPlace: Double = 2
+        
+        //get minute from the decimal of time
+        let indexForHour = timeString.index(timeString.startIndex, offsetBy: 2)
+        let indexForMinute = timeString.index(timeString.startIndex, offsetBy: 3)
+        let hour = Double(timeString.substring(to: indexForHour))
+        let minute = Double(timeString.substring(from: indexForMinute))
+        
+        print(minute!/60.0)
+        let time = hour! + (minute!/60.0)
+        
+        //round to 2 decimal place
+        let roundedTime = Double(round(numberOfDecimalPlace * 10 * time) / (numberOfDecimalPlace * 10))
+
+        return roundedTime
     }
 
 
@@ -153,6 +182,119 @@ class Util{
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
+    }
+    
+    //Update date
+    static func updateData(completion: @escaping (Bool) -> Void ) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        //Reference to context
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        deleteLetureData()
+        deleteCourseData()
+        deleteStudentData()
+        
+        //Get Student data from Firebase
+        getStudentData(uid: appDelegate.userId!, completionHandler: { result in
+            
+            //Initialize User
+            //Initialize User
+            let firstName = result["firstName"] as! String
+            let lastName = result["lastName"] as! String
+            let avatar = result["avatar"] as! NSData
+            let email = result["email"] as! String
+            let id = result["id"] as! String
+            let course = result["courses"] as! [String: String]
+            
+            //Load courses of user
+            for courseId in Array(course.keys) {
+                getCourse(courseId: courseId, into: managedContext, completionHandler: { course in
+                    
+                    //Load lectures
+                    getLectures(of: course.id!, into: managedContext, completionHandler: {array in
+                        let lectureSet = NSSet(array: array)
+                        course.addToLecture(lectureSet)
+                        
+                        save(in: managedContext)
+                        
+                        completion(true)
+                    })
+                    
+                    //Adding course to student
+                    appDelegate.user?.addToCourse(course)
+                    
+                    //Save courses
+                    save(in: managedContext)
+                })
+            }
+            
+            appDelegate.user = Student.init(email: email, firstName: firstName, lastName: lastName, id: id, avatar: avatar, insertInto: managedContext)
+            
+            save(in: managedContext)
+        })
+    }
+
+    //DeleteData
+    static func deleteStudentData() {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        //Reference to context
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        //Create fetch request
+        let studentFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
+        let studentRequest = NSBatchDeleteRequest(fetchRequest: studentFetch)
+        
+        do {
+            try managedContext.execute(studentRequest)
+            
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Error of deleting: \(error)")
+        }
+    }
+    
+    static func deleteCourseData() {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        //Reference to context
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let courseFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Course")
+        let courseRequest = NSBatchDeleteRequest(fetchRequest: courseFetch)
+        
+        do {
+            try managedContext.execute(courseRequest)
+            
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Error of deleting: \(error)")
+        }
+        
+    }
+    
+    static func deleteLetureData() {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        //Reference to context
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let lectureFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Lecture")
+        let lectureRequest = NSBatchDeleteRequest(fetchRequest: lectureFetch)
+        
+        do {
+            try managedContext.execute(lectureRequest)
+            
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Error of deleting: \(error)")
+        }
+        
     }
 
 }

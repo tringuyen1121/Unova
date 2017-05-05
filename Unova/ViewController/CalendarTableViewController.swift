@@ -71,7 +71,7 @@ class CalendarTableViewController: UITableViewController {
         let lecture = lectures[indexPath.row]
         
         //Format date into DD-MMM-YYYY
-        cell.dateLabelView.text = convertDateString(date: lecture.date as! Date, toFormat: "dd-MMM-yyyy")
+        cell.dateLabelView.text = Util.convertDateString(date: lecture.date as! Date, toFormat: "dd-MMM-yyyy")
         
         cell.timeLabelView.text = Util.transformTime(from: lecture.startTime) + " - " + Util.transformTime(from: lecture.endTime)
         cell.roomLabelView.text = lecture.room
@@ -125,14 +125,5 @@ class CalendarTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    //MARK: Private methods
-    private func convertDateString(date: Date, toFormat desFormat : String!) -> String {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = desFormat
-        
-        return dateFormatter.string(from: date)
-    }
 
 }

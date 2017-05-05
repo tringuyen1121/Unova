@@ -121,6 +121,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                     }
                     
                     self.appDelegate.user = Student.init(email: email, firstName: firstName, lastName: lastName, id: id, avatar: avatar, insertInto: managedContext)
+                    self.appDelegate.userId = user!.uid
                     
                     Util.save(in: managedContext)
                     
@@ -134,6 +135,62 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
+    /*
+    func authenticateWith(_ username: String, password: String) {
+        let request = NSMutableURLRequest()
+        request.httpMethod = "POST"
+        request.url = NSURL(string: urlString) as URL?
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let body = "username=\(username)&password=\(password)"
+        
+        request.httpBody = body.data(using: String.Encoding.utf8)
+        
+        let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { data, response, error -> Void in
+            guard let data = data, error == nil else {
+                print("error=\(error)")
+                
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("StatusCode should be 200, but is \(httpStatus.statusCode)")
+                self.createAlertWithTitle("Error", message: "Username or password is wrong")
+                print("respone =\(response)")
+            }
+            
+            
+            do {
+                
+                //parse JSON from response
+                let responseJSON = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [ String : Any ]
+                let user = responseJSON["user"] as? [ String: Any ]
+                
+                self.saveUser(email: self.emailTextField.text!, password: self.passwordTextField.text!)
+                
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.token = responseJSON["token"] as? String ?? ""
+                appDelegate.username = user?["username"] as? String ?? ""
+                appDelegate.signedIn = true
+                
+                //Navigate to next scene
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                guard let homePageViewController = storyBoard.instantiateViewController(withIdentifier: "HomePageViewController") as? HomePageViewController else {
+                    fatalError("Cannot downcast to HomePageViewController")
+                }
+                let navController: UINavigationController = UINavigationController.init(rootViewController: homePageViewController)
+                self.navigationController?.present(navController, animated: true, completion: nil)
+                
+            } catch let error as NSError {
+                print(error)
+            }
+            
+        }).resume()
+    }
+    */
     
     private func createAlertWithTitle(_ title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
