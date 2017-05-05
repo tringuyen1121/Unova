@@ -191,6 +191,7 @@ class Util{
         
         //Reference to context
         let managedContext = appDelegate.persistentContainer.viewContext
+        managedContext.mergePolicy = NSMergePolicy(merge: .mergeByPropertyObjectTrumpMergePolicyType)
         
         deleteLetureData()
         deleteCourseData()

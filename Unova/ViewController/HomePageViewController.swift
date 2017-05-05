@@ -21,6 +21,8 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let databaseRef = FIRDatabase.database().reference()
     
+    var todayLecture: Lecture?
+    
     //MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +57,6 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func checkInTapped(_ sender: Any) {
-        checkUserIn()
-    }
     
     //MARK: CLLocationManager Delegates
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
@@ -75,9 +74,14 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func startScanningForBeaconRegion(beaconRegion: CLBeaconRegion) {
-        print(beaconRegion)
         locationManager.startMonitoring(for: beaconRegion)
         locationManager.startRangingBeacons(in: beaconRegion)
+    }
+    
+    func stopScanningForBeaconRegion(beaconRegion: CLBeaconRegion) {
+        print(beaconRegion)
+        locationManager.stopMonitoring(for: beaconRegion)
+        locationManager.stopRangingBeacons(in: beaconRegion)
     }
     
 
@@ -90,11 +94,28 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func checkInTapped(_ sender: Any) {
+        checkUserIn()
+    }
+    
+    //MARK: Set seugues
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCheckinPage" {
+            
+            guard let checkInScene = segue.destination as? CheckInViewController else {
+                fatalError("Cannot get checkIn Scene")
+            }
+
+            checkInScene.className = todayLecture?.course?.name
+            checkInScene.classID = "TX00CEXX-" + (todayLecture?.course?.id)!
+            checkInScene.lecturer = todayLecture?.course?.lecturer
+            checkInScene.duration = String((todayLecture?.endTime)! - (todayLecture?.startTime)!)
+            checkInScene.checkInTime = Util.transformTime(from: getCurrentDateAndTimeAsString()["time"] as! Double)
+        }
+    }
     
     //Mark: Private methods
     private func checkUserIn() {
-        //reference to NSManagedObject Context
-        let managedContext = appDelegate.persistentContainer.viewContext
         
         //get date and time
         let currentTime = getCurrentDateAndTimeAsString()
@@ -110,6 +131,8 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
             
             if date == today {
                 
+                todayLecture = lecture
+                
                 //check user in during lecure time
                 if checkinTime >= lecture.startTime && checkinTime <= lecture.endTime {
                     guard let userUID = appDelegate.user?.id else {
@@ -120,8 +143,15 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
                     print("writing to database")
                     databaseRef.child("lecture").child(getConnectedCourse().id!).child(lecture.id!).child("checkin-time").updateChildValues([userUID: checkinTime])
                     
+                    let segueIdentifier = "showCheckinPage"
+                    self.performSegue(withIdentifier: segueIdentifier, sender: self)
+                    
                     //Update core data by loading the whole data *too lazy*
                     Util.updateData(completion: { done in })
+                    
+                    //stopRanging
+                    stopScanningForBeaconRegion(beaconRegion: getBeaconRegion())
+
                 }
 
                 break
@@ -168,4 +198,5 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
         
         return connectedCourse
     }
+    
 }
