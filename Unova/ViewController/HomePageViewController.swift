@@ -109,19 +109,19 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
             let date = Util.convertDateString(date: lecture.date as! Date, toFormat: "yyyy-MM-dd")
             
             if date == today {
-                //only check User in 1 hour from the start time
-                if checkinTime >= lecture.startTime && checkinTime <= (lecture.startTime + 1) {
+                
+                //check user in during lecure time
+                if checkinTime >= lecture.startTime && checkinTime <= lecture.endTime {
                     guard let userUID = appDelegate.user?.id else {
                         fatalError("Cannot get User uid")
                     }
-                    
+    
                     //write to database
                     print("writing to database")
                     databaseRef.child("lecture").child(getConnectedCourse().id!).child(lecture.id!).child("checkin-time").updateChildValues([userUID: checkinTime])
                     
-                    Util.updateData(completion: { done in
-                        
-                    })
+                    //Update core data by loading the whole data *too lazy*
+                    Util.updateData(completion: { done in })
                 }
 
                 break
