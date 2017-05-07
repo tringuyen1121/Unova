@@ -108,7 +108,9 @@ class Util{
     //Get Avatar of a Student
     static func getAvatar(name: String, completionHandler: @escaping (NSData?, NSError?) -> Void ) {
         let path = "avatars/" + name
+        
         //Create reference to the avatar in storage
+        
         let storageRef = FIRStorage.storage().reference().child(path)
         //// Download the data, assuming a max size of 1MB
         storageRef.data(withMaxSize: 1 * 1024 * 1024) { (data, error) -> Void in

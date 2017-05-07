@@ -35,7 +35,6 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         
-        startScanningForBeaconRegion(beaconRegion: getBeaconRegion())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,7 +42,10 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
         
         //Hide the navigation bar
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        startScanningForBeaconRegion(beaconRegion: getBeaconRegion())
     }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -60,10 +62,19 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: CLLocationManager Delegates
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-        let beacon = beacons.last
         
         if beacons.count > 0 {
-            checkUserIn()
+            for beacon in beacons {
+                if beacon.major == 12307 as NSNumber{
+                    print(beacon.major)
+                    checkUserIn(courseID: "c000")
+                    break
+                } else {
+                    print(beacon.major)
+                    checkUserIn(courseID: "c001")
+                    break
+                }
+            }
         }
     }
     
@@ -94,9 +105,6 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func checkInTapped(_ sender: Any) {
-        checkUserIn()
-    }
     
     //MARK: Set seugues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -115,7 +123,7 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     //Mark: Private methods
-    private func checkUserIn() {
+    private func checkUserIn(courseID: String) {
         
         //get date and time
         let currentTime = getCurrentDateAndTimeAsString()
@@ -124,7 +132,7 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
         
         
         //ref to today lecture
-        let lectureList = getConnectedCourse().lecture as! Set<Lecture>
+        let lectureList = getConnectedCourse(courseID).lecture as! Set<Lecture>
         
         for lecture in lectureList {
             let date = Util.convertDateString(date: lecture.date as! Date, toFormat: "yyyy-MM-dd")
@@ -132,6 +140,10 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
             if date == today {
                 
                 todayLecture = lecture
+                let checkinDic = lecture.checkinTime as! [String: Any]
+                
+                if checkinDic[(appDelegate.user?.id)!] == nil {
+                    print("checking in")
                 
                 //check user in during lecure time
                 if checkinTime >= lecture.startTime && checkinTime <= lecture.endTime {
@@ -141,7 +153,7 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
     
                     //write to database
                     print("writing to database")
-                    databaseRef.child("lecture").child(getConnectedCourse().id!).child(lecture.id!).child("checkin-time").updateChildValues([userUID: checkinTime])
+                    databaseRef.child("lecture").child(getConnectedCourse(courseID).id!).child(lecture.id!).child("checkin-time").updateChildValues([userUID: checkinTime])
                     
                     let segueIdentifier = "showCheckinPage"
                     self.performSegue(withIdentifier: segueIdentifier, sender: self)
@@ -152,6 +164,7 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
                     //stopRanging
                     stopScanningForBeaconRegion(beaconRegion: getBeaconRegion())
 
+                }
                 }
 
                 break
@@ -181,10 +194,10 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
         return currentTime
     }
     
-    private func getConnectedCourse() -> Course {
+    private func getConnectedCourse(_ id: String) -> Course {
         
         //id of course that current beacon connects to
-        let courseId = "c001"
+        let courseId = id
         var connectedCourse = Course()
         
         let courseList = appDelegate.user?.course as! Set<Course>
