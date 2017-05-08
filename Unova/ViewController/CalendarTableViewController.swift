@@ -27,10 +27,12 @@ class CalendarTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Get course list
         guard let coursesOfStudent = appDelegate.user?.course as? Set<Course> else {
             fatalError("Cannot load courses of student")
         }
         
+        // Get lecture list
         for course in coursesOfStudent {
             guard let lecture = course.lecture as? Set<Lecture> else {
                 fatalError("Cannot load lecture")

@@ -32,6 +32,7 @@ class CheckInViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Get label content
         classNameLabelView.text = className
         classIDLabelView.text = classID
         lecturerLabelView.text = lecturer

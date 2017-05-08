@@ -61,6 +61,8 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     //MARK: CLLocationManager Delegates
+    
+    // Get location based on beacon signal
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         
         if beacons.count > 0 {
@@ -77,6 +79,8 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
     }
+    
+    // Self-explain functions
     
     func getBeaconRegion() -> CLBeaconRegion {
         let beaconRegion = CLBeaconRegion.init(proximityUUID: UUID.init(uuidString: "5270C0C8-5151-4349-B0B8-649042AE89B6")!, identifier: "com.example.Unova")
@@ -137,6 +141,7 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
         for lecture in lectureList {
             let date = Util.convertDateString(date: lecture.date as! Date, toFormat: "yyyy-MM-dd")
             
+            // Check students in on current date
             if date == today {
                 
                 todayLecture = lecture
@@ -172,6 +177,7 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    // Get date and time string
     private func getCurrentDateAndTimeAsString() -> [String: Any] {
         
         let date = Date()
@@ -194,6 +200,7 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
         return currentTime
     }
     
+    // Get course ID of beacon
     private func getConnectedCourse(_ id: String) -> Course {
         
         //id of course that current beacon connects to

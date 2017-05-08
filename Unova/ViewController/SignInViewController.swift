@@ -73,6 +73,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         let username = emailTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         
+        // Proceed to sign in
         if (!username.isEmpty && !password.isEmpty) {
             authenticateWith(username, password: password)
         } else {
@@ -81,6 +82,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: Private function
+    // Sign user in
     private func authenticateWith(_ email: String, password: String) {
         
         //reference to NSManagedObject Context

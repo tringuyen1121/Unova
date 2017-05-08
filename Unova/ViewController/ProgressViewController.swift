@@ -140,6 +140,8 @@ class ProgressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     */
     
     //MARK: Private methods
+    
+    // Check if student is present during a lecture
     private func isPresent(of lecture: Lecture) -> Bool {
         
         guard let checkinTime = lecture.checkinTime as? [String: Any] else {
@@ -152,6 +154,7 @@ class ProgressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return false
     }
     
+    // Get attendance value
     private func numberOfPresence(of course: Course) -> Int {
         
         var numberOfPresence: Int = 0
@@ -167,6 +170,7 @@ class ProgressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return numberOfPresence
     }
     
+    // Calculate attendance percentage
     private func updatePercentage(of course: Course) {
         
         let numberOfDecimalPlace: Double = 1
@@ -181,6 +185,7 @@ class ProgressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         percentageLabelView.text = String(roundedPercentage) + "%"
     }
     
+    // Modify date string
     private func cropDateString(date: Date) -> String {
         
         let dateFormatter = DateFormatter()

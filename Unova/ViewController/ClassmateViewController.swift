@@ -104,6 +104,8 @@ class ClassmateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
 
     //MARK: Private functions
+    
+    // Get student list
     private func loadClassmates(courseId: String) {
         
         //reference to NSManagedObject Context
