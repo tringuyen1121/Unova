@@ -36,10 +36,10 @@ class ProgressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let width = UIScreen.main.bounds.width - 10
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0.5
+        layout.scrollDirection = UICollectionViewScrollDirection.horizontal
         layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
-        layout.itemSize = CGSize(width: width / 6, height: CGFloat(55.0))
+        layout.itemSize = CGSize(width: width / 6, height: CGFloat(80.0))
         
         progressCollectionView.collectionViewLayout = layout
         
